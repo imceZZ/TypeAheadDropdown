@@ -74,10 +74,10 @@ render() {
 | height               | Height of the text input                                               | No       |
 | width                | Width of the text input                                                | No       |
 
-## Authors
+## Author
 
 - **Neim Elezi aka Imce** - (https://github.com/imceZZ)
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details

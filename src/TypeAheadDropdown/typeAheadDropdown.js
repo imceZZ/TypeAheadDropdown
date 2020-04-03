@@ -82,7 +82,12 @@ class TypeAheadDropdown extends React.Component {
             onChange={this.handleChange.bind(this)}
           />
           {displayTable ? (
-            <div className="searchDiv">
+            <div
+              className="searchDiv"
+              style={{
+                top: typeof height != "undefined" ? height : ""
+              }}
+            >
               <Dropdown
                 data={data}
                 getName={this.getName}
