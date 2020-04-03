@@ -65,7 +65,10 @@ class TypeAheadDropdown extends React.Component {
       liColor
     } = this.props;
     return (
-      <div className="typeAheadDropdown">
+      <div
+        className="typeAheadDropdown"
+        style={{ width: typeof width != "undefined" ? width : "" }}
+      >
         <div
           className="wrapSearchDiv"
           style={{
