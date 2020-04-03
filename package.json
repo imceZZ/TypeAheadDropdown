@@ -1,6 +1,13 @@
 {
-  "name": "my-app",
+  "name": "TypeAheadDropdown",
   "version": "0.1.0",
+  "description": "TypeAhead dropdown with pagination",
+  "author": "Neim Elezi - Imce",
+  "repository": {
+    "type": "Github",
+    "url": "https://github.com/imceZZ/TypeAheadDropdown"
+  },
+  "license": "MIT",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
