@@ -1,5 +1,5 @@
 {
-  "name": "TypeAheadDropdown",
+  "name": "typeahead-dropdown",
   "version": "0.1.0",
   "description": "TypeAhead dropdown with pagination",
   "author": "Neim Elezi - Imce",
@@ -8,8 +8,10 @@
     "url": "https://github.com/imceZZ/TypeAheadDropdown"
   },
   "license": "MIT",
-  "private": true,
+  "private": false,
   "dependencies": {
+    "@babel/plugin-proposal-class-properties": "^7.8.3",
+    "@babel/plugin-syntax-dynamic-import": "^7.8.3",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^7.2.1",
@@ -19,7 +21,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "BABEL_ENV=test babel src/TypeAheadDropdown -d lib",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
@@ -37,5 +39,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.8.4",
+    "babel-preset-react-app": "^9.1.2"
   }
 }

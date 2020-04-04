@@ -1,5 +1,7 @@
 # TypeAhead Dropdown
 
+![](typeAheadDropdownGIF.gif)
+
 TypeAhead Dropdown is a ReactJS UI component that allows you to search based on the text that you give in the input and also you have options Previous and Next to see all results based on the query that you have made.
 
 ## Getting Started
@@ -12,7 +14,7 @@ You should install this component in ReactJS application otherwise will not work
 
 If you don't specify (data) prop when you use TypeAheadDropdown then in the dropdown you will see the default list that I have implemented for testing.
 
-You must declare these functions in the component otherwise will not work:
+You must declare these methods in the component otherwise will not work:
 
 ```
 getFullName(fullName) {
@@ -43,16 +45,27 @@ import TypeAheadDropdown from 'TypeAheadDropdown'
 Now you can use it in component
 
 ```
-render() {
-  return (
-    <TypeAheadDropdown
-      getFullName={this.getFullName}
-      btnPrevious={this.btnPrevious}
-      btnNext={this.btnNext}
-      firstButton="Previous"
-      secondButton="Next"
-    />
-  );
+class TypeAhead extends React.Component {
+  getFullName(fullName) {
+    console.log(fullName);
+  }
+  btnPrevious() {
+    console.log("previous button clicked");
+  }
+  btnNext() {
+    console.log("next button clicked");
+  }
+  render() {
+    return (
+      <TypeAheadDropdown
+        getFullName={this.getFullName}
+        btnPrevious={this.btnPrevious}
+        btnNext={this.btnNext}
+        firstButton="Previous"
+        secondButton="Next"
+      />
+    );
+  }
 }
 ```
 
@@ -73,6 +86,38 @@ render() {
 | liColor              | List item color                                                        | No       |
 | height               | Height of the text input                                               | No       |
 | width                | Width of the text input                                                | No       |
+
+## Data prop example
+
+```
+[
+  {
+    name: "Imce",
+    surname: "Elezi",
+    age: 25
+  },
+  {
+    name: "Neim",
+    surname: "Elezi",
+    age: 25
+  },
+  {
+    name: "Aldion",
+    surname: "Ambari",
+    age: 23
+  },
+  {
+    name: "Arian",
+    surname: "Derdo",
+    age: 25
+  },
+  {
+    name: "Brian",
+    surname: "Haas",
+    age: 26
+  }
+];
+```
 
 ## Author
 

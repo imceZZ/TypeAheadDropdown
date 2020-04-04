@@ -1,5 +1,5 @@
 import React from "react";
-import TypeAheadDropdown from "./TypeAheadDropdown/typeAheadDropdown";
+import TypeAheadDropdown from "./TypeAheadDropdown";
 
 class TypeAhead extends React.Component {
   getFullName(fullName) {
