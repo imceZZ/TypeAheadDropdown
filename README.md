@@ -39,7 +39,7 @@ npm install TypeAheadDropdown --save
 After installing you are ready to use it by importing:
 
 ```
-import TypeAheadDropdown from 'TypeAheadDropdown'
+import TypeAheadDropdown from "typeahead-dropdown";
 ```
 
 Now you can use it in component
