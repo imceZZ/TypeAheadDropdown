@@ -97,9 +97,14 @@ class TypeAhead extends React.Component {
     age: 25
   },
   {
+    name: "Shqipe",
+    surname: "Salii",
+    age: 22
+  },
+  {
     name: "Neim",
     surname: "Elezi",
-    age: 25
+    age: 24
   },
   {
     name: "Aldion",
@@ -107,14 +112,14 @@ class TypeAhead extends React.Component {
     age: 23
   },
   {
-    name: "Arian",
-    surname: "Derdo",
+    name: "Brian",
+    surname: "Haas",
     age: 25
   },
   {
-    name: "Brian",
-    surname: "Haas",
-    age: 26
+    name: "Arian",
+    surname: "Derdo",
+    age: 25
   }
 ];
 ```

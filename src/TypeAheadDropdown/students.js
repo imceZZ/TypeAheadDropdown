@@ -5,14 +5,24 @@ const students = [
     age: 25
   },
   {
+    name: "Shqipe",
+    surname: "Salii",
+    age: 22
+  },
+  {
     name: "Neim",
     surname: "Elezi",
-    age: 58
+    age: 24
   },
   {
     name: "Aldion",
     surname: "Ambari",
     age: 23
+  },
+  {
+    name: "Brian",
+    surname: "Haas",
+    age: 25
   },
   {
     name: "Arian",
