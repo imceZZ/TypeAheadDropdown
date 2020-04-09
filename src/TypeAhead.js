@@ -2,8 +2,8 @@ import React from "react";
 import TypeAheadDropdown from "./TypeAheadDropdown";
 
 class TypeAhead extends React.Component {
-  getFullName(fullName) {
-    console.log(fullName);
+  getFullName(selectedRow) {
+    console.log(selectedRow);
   }
   btnPrevious() {
     console.log("previous button clicked");

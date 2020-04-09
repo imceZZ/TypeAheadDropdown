@@ -8,6 +8,7 @@ class Dropdown extends React.Component {
   }
   handleClick(e) {
     return this.props.getName(
+      e.currentTarget.dataset.id,
       e.currentTarget.dataset.name,
       e.currentTarget.dataset.surname
     );
@@ -32,6 +33,7 @@ class Dropdown extends React.Component {
                 }}
                 key={j}
                 onClick={this.handleClick}
+                data-id={typeof item.id === "undefined" ? "" : item.id}
                 data-name={item.name}
                 data-surname={item.surname}
               >

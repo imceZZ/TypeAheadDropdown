@@ -39,11 +39,16 @@ class TypeAheadDropdown extends React.Component {
   displayTable() {
     this.setState({ displayTable: true });
   }
-  getName(name, surname) {
+  getName(id, name, surname) {
     this.setState({ studentName: `${name} ${surname}` }, () => {
       this.setState({ displayTable: false, studentSelected: true });
     });
-    this.props.getFullName(`${name} ${surname}`);
+    const selectedPerson = {
+      id,
+      name,
+      surname
+    };
+    this.props.getFullName(selectedPerson);
   }
   btnNext() {
     this.props.btnNext();
