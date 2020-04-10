@@ -71,21 +71,23 @@ class TypeAhead extends React.Component {
 
 ## User guide
 
-| Prop name            | Description                                                            | Required |
-| -------------------- | ---------------------------------------------------------------------- | -------- |
-| getFullName          | This function will return full name of the selected item from dropdown | Yes      |
-| btnPrevious          | Function to manipulate list                                            | Yes      |
-| btnNext              | Function to manipulate list                                            | Yes      |
-| data                 | Array with object's that have properties name and surname              | No       |
-| firstButton          | Title of the first button                                              | No       |
-| secondButton         | Title of the second button                                             | No       |
-| btnBackgroundColor   | Background-color of the button's, example 'red'                        | No       |
-| btnTextColor         | Text color of the button's                                             | No       |
-| btnfFooterBackground | Background-color of the div where button's are placed                  | No       |
-| ulBackgroundColor    | Background-color of the unordered list                                 | No       |
-| liColor              | List item color                                                        | No       |
-| height               | Height of the text input                                               | No       |
-| width                | Width of the text input                                                | No       |
+| Prop name            | Description                                                                                                                   | Required |
+| -------------------- | ----------------------------------------------------------------------------------------------------------------------------- | -------- |
+| getFullName          | This function will return object with id -> (if it is provided in array), name and surname of the selected item from dropdown | Yes      |
+| btnPrevious          | Function to manipulate list                                                                                                   | Yes      |
+| btnNext              | Function to manipulate list                                                                                                   | Yes      |
+| data                 | Array with object's that have properties name and surname                                                                     | No       |
+| defaultName          | Set default value in the text-input                                                                                           | No       |
+| placeholder          | Set placeholder of the text-input                                                                                             | No       |
+| firstButton          | Title of the first button                                                                                                     | No       |
+| secondButton         | Title of the second button                                                                                                    | No       |
+| btnBackgroundColor   | Background-color of the button's, example 'red'                                                                               | No       |
+| btnTextColor         | Text color of the button's                                                                                                    | No       |
+| btnfFooterBackground | Background-color of the div where button's are placed                                                                         | No       |
+| ulBackgroundColor    | Background-color of the unordered list                                                                                        | No       |
+| liColor              | List item color                                                                                                               | No       |
+| height               | Height of the text input                                                                                                      | No       |
+| width                | Width of the text input                                                                                                       | No       |
 
 ## Data prop example
 

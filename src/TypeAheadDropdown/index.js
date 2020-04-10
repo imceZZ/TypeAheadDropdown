@@ -9,8 +9,15 @@ class TypeAheadDropdown extends React.Component {
     this.state = {
       data: typeof this.props.data != "undefined" ? this.props.data : students,
       displayTable: undefined,
+      inputPlaceholder:
+        typeof this.props.placeholder != "undefined"
+          ? this.props.placeholder
+          : "Search student...",
       studentSelected: false,
-      studentName: ""
+      studentName:
+        typeof this.props.defaultName != "undefined"
+          ? this.props.defaultName
+          : ""
     };
     this.displayTable = this.displayTable.bind(this);
     this.getName = this.getName.bind(this);
@@ -28,7 +35,10 @@ class TypeAheadDropdown extends React.Component {
     if (this.wrapRef.contains(e.target)) {
       return;
     }
-    if (!this.state.studentSelected) {
+    if (
+      !this.state.studentSelected &&
+      this.state.studentName != this.props.defaultName
+    ) {
       this.setState({ studentName: "" });
     }
     this.setState({ displayTable: false });
@@ -85,7 +95,7 @@ class TypeAheadDropdown extends React.Component {
         >
           <input
             className="searchInput"
-            placeholder="Search student..."
+            placeholder={this.state.inputPlaceholder}
             value={studentName}
             onChange={this.handleChange.bind(this)}
           />
