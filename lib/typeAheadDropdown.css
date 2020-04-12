@@ -6,6 +6,7 @@
   position: relative;
   height: 35px;
   width: 300px;
+  z-index: 999;
 }
 .searchInput {
   flex: 1;

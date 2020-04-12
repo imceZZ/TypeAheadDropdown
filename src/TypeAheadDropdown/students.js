@@ -1,15 +1,18 @@
 const students = [
   {
+    id: 1,
     name: "Imce",
     surname: "Elezi",
     age: 25
   },
   {
+    id: 2,
     name: "Shqipe",
     surname: "Salii",
     age: 22
   },
   {
+    id: 3,
     name: "Neim",
     surname: "Elezi",
     age: 24

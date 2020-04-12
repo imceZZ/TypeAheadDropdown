@@ -20,6 +20,9 @@ You must declare these methods in the component otherwise will not work:
 getFullName(fullName) {
   console.log(fullName);
 }
+handleChange(textInput) {
+  console.log(textInput);
+}
 btnPrevious() {
   console.log("previous button clicked");
 }
@@ -49,6 +52,9 @@ class TypeAhead extends React.Component {
   getFullName(fullName) {
     console.log(fullName);
   }
+  handleChange(textInput) {
+    console.log(textInput);
+  }
   btnPrevious() {
     console.log("previous button clicked");
   }
@@ -58,6 +64,9 @@ class TypeAhead extends React.Component {
   render() {
     return (
       <TypeAheadDropdown
+        displayProperties={["name", "surname"]}
+        selectedObjectToReturn={["id", "name", "surname"]}
+        data={data}
         getFullName={this.getFullName}
         btnPrevious={this.btnPrevious}
         btnNext={this.btnNext}
@@ -71,54 +80,63 @@ class TypeAhead extends React.Component {
 
 ## User guide
 
-| Prop name            | Description                                                                                                                   | Required |
-| -------------------- | ----------------------------------------------------------------------------------------------------------------------------- | -------- |
-| getFullName          | This function will return object with id -> (if it is provided in array), name and surname of the selected item from dropdown | Yes      |
-| btnPrevious          | Function to manipulate list                                                                                                   | Yes      |
-| btnNext              | Function to manipulate list                                                                                                   | Yes      |
-| data                 | Array with object's that have properties name and surname                                                                     | No       |
-| defaultName          | Set default value in the text-input                                                                                           | No       |
-| placeholder          | Set placeholder of the text-input                                                                                             | No       |
-| firstButton          | Title of the first button                                                                                                     | No       |
-| secondButton         | Title of the second button                                                                                                    | No       |
-| btnBackgroundColor   | Background-color of the button's, example 'red'                                                                               | No       |
-| btnTextColor         | Text color of the button's                                                                                                    | No       |
-| btnfFooterBackground | Background-color of the div where button's are placed                                                                         | No       |
-| ulBackgroundColor    | Background-color of the unordered list                                                                                        | No       |
-| liColor              | List item color                                                                                                               | No       |
-| height               | Height of the text input                                                                                                      | No       |
-| width                | Width of the text input                                                                                                       | No       |
+| Prop name              | Description                                                                                                             | Required |
+| ---------------------- | ----------------------------------------------------------------------------------------------------------------------- | -------- |
+| getFullName            | This function will return object with with props that you specify in selectedObjectToReturn                             | Yes      |
+| btnPrevious            | Function to manipulate list                                                                                             | Yes      |
+| btnNext                | Function to manipulate list                                                                                             | Yes      |
+| onChange               | Function that returns text which you write in text-input                                                                | Yes      |
+| displayProperties      | Specify props of the object inside array for example ['name','surname'] NOTE: No more than 2                            | Yes      |
+| selectedObjectToReturn | Specify props that you want to be returned as object in getFullName method NOTE: No more than 3 ['id','name','surname'] | Yes      |
+| data                   | Array with object's                                                                                                     | No       |
+| defaultName            | Set default value in the text-input                                                                                     | No       |
+| placeholder            | Set placeholder of the text-input                                                                                       | No       |
+| firstButton            | Title of the first button                                                                                               | No       |
+| secondButton           | Title of the second button                                                                                              | No       |
+| btnBackgroundColor     | Background-color of the button's, example 'red'                                                                         | No       |
+| btnTextColor           | Text color of the button's                                                                                              | No       |
+| btnfFooterBackground   | Background-color of the div where button's are placed                                                                   | No       |
+| ulBackgroundColor      | Background-color of the unordered list                                                                                  | No       |
+| liColor                | List item color                                                                                                         | No       |
+| height                 | Height of the text input                                                                                                | No       |
+| width                  | Width of the text input                                                                                                 | No       |
 
 ## Data prop example
 
 ```
 [
   {
+    id:1,
     name: "Imce",
     surname: "Elezi",
     age: 25
   },
   {
+    id:2,
     name: "Shqipe",
     surname: "Salii",
     age: 22
   },
   {
+    id:3,
     name: "Neim",
     surname: "Elezi",
     age: 24
   },
   {
+    id:3,
     name: "Aldion",
     surname: "Ambari",
     age: 23
   },
   {
+    id:4,
     name: "Brian",
     surname: "Haas",
     age: 25
   },
   {
+    id:5,
     name: "Arian",
     surname: "Derdo",
     age: 25

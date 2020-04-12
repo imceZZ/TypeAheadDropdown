@@ -37,7 +37,7 @@ class TypeAheadDropdown extends React.Component {
     }
     if (
       !this.state.studentSelected &&
-      this.state.studentName != this.props.defaultName
+      this.state.studentName !== this.props.defaultName
     ) {
       this.setState({ studentName: "" });
     }
@@ -45,18 +45,20 @@ class TypeAheadDropdown extends React.Component {
   };
   handleChange(event) {
     this.setState({ studentName: event.target.value, studentSelected: false });
+    this.props.onChange(event.target.value);
   }
   displayTable() {
     this.setState({ displayTable: true });
   }
   getName(id, name, surname) {
+    const { selectedObjectToReturn } = this.props;
     this.setState({ studentName: `${name} ${surname}` }, () => {
       this.setState({ displayTable: false, studentSelected: true });
     });
     const selectedPerson = {
-      id,
-      name,
-      surname
+      [selectedObjectToReturn[0]]: id,
+      [selectedObjectToReturn[1]]: name,
+      [selectedObjectToReturn[2]]: surname
     };
     this.props.getFullName(selectedPerson);
   }
@@ -107,6 +109,8 @@ class TypeAheadDropdown extends React.Component {
               }}
             >
               <Dropdown
+                displayProperties={this.props.displayProperties}
+                selectedObjectToReturn={this.props.selectedObjectToReturn}
                 data={data}
                 getName={this.getName}
                 ulBackgroundColor={ulBackgroundColor}

@@ -15,7 +15,13 @@ class Dropdown extends React.Component {
   }
   render() {
     let j = 0;
-    const { ulBackgroundColor, liColor, data } = this.props;
+    const {
+      ulBackgroundColor,
+      liColor,
+      data,
+      displayProperties,
+      selectedObjectToReturn
+    } = this.props;
     return (
       <div
         className="dropDownDiv"
@@ -28,16 +34,17 @@ class Dropdown extends React.Component {
             j++;
             return (
               <li
+                className="liSelector"
                 style={{
                   color: liColor
                 }}
                 key={j}
                 onClick={this.handleClick}
-                data-id={typeof item.id === "undefined" ? "" : item.id}
-                data-name={item.name}
-                data-surname={item.surname}
+                data-id={item[selectedObjectToReturn[0]]}
+                data-name={item[selectedObjectToReturn[1]]}
+                data-surname={item[selectedObjectToReturn[2]]}
               >
-                {item.name} {item.surname}
+                {item[displayProperties[0]]} {item[displayProperties[1]]}
               </li>
             );
           })}

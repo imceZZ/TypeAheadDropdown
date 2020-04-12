@@ -11,9 +11,15 @@ class TypeAhead extends React.Component {
   btnNext() {
     console.log("next button clicked");
   }
+  handleChange(textInput) {
+    console.log(textInput);
+  }
   render() {
     return (
       <TypeAheadDropdown
+        displayProperties={["name", "surname"]}
+        selectedObjectToReturn={["id", "name", "surname"]}
+        onChange={this.handleChange}
         getFullName={this.getFullName}
         btnPrevious={this.btnPrevious}
         btnNext={this.btnNext}
