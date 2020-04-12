@@ -66,6 +66,7 @@ class TypeAhead extends React.Component {
       <TypeAheadDropdown
         displayProperties={["name", "surname"]}
         selectedObjectToReturn={["id", "name", "surname"]}
+        onChange={this.handleChange}
         data={data}
         getFullName={this.getFullName}
         btnPrevious={this.btnPrevious}
@@ -86,7 +87,7 @@ class TypeAhead extends React.Component {
 | btnPrevious            | Function to manipulate list                                                                                             | Yes      |
 | btnNext                | Function to manipulate list                                                                                             | Yes      |
 | onChange               | Function that returns text which you write in text-input                                                                | Yes      |
-| displayProperties      | Specify props of the object inside array for example ['name','surname'] NOTE: No more than 2                            | Yes      |
+| displayProperties      | Specify props of the object inside array for example NOTE: No more than 2 ['name','surname']                            | Yes      |
 | selectedObjectToReturn | Specify props that you want to be returned as object in getFullName method NOTE: No more than 3 ['id','name','surname'] | Yes      |
 | data                   | Array with object's                                                                                                     | No       |
 | defaultName            | Set default value in the text-input                                                                                     | No       |
