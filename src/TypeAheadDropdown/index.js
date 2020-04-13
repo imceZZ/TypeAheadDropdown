@@ -31,6 +31,13 @@ class TypeAheadDropdown extends React.Component {
   componentWillUnmount() {
     document.removeEventListener("mousedown", this.handleClick, false);
   }
+  componentWillReceiveProps() {
+    if (this.props.data.error) {
+      this.setState({ data: [] });
+    } else {
+      this.setState({ data: this.props.data });
+    }
+  }
   handleClick = e => {
     if (this.wrapRef.contains(e.target)) {
       return;
@@ -52,9 +59,25 @@ class TypeAheadDropdown extends React.Component {
   }
   getName(id, name, surname) {
     const { selectedObjectToReturn } = this.props;
-    this.setState({ studentName: `${name} ${surname}` }, () => {
-      this.setState({ displayTable: false, studentSelected: true });
-    });
+    let studentN = "";
+    if (
+      this.props.displayProperties[0].length > 0 &&
+      this.props.displayProperties[1].length > 0
+    ) {
+      studentN = name + " " + surname;
+    } else if (this.props.displayProperties[0].length > 0) {
+      studentN = name;
+    } else if (this.props.displayProperties[1].length > 0) {
+      studentN = surname;
+    }
+    this.setState(
+      {
+        studentName: studentN
+      },
+      () => {
+        this.setState({ displayTable: false, studentSelected: true });
+      }
+    );
     const selectedPerson = {
       [selectedObjectToReturn[0]]: id,
       [selectedObjectToReturn[1]]: name,
