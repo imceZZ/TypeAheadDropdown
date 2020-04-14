@@ -1,14 +1,16 @@
 .typeAheadDropdown {
   width: 300px;
+  z-index: 1000;
 }
 .wrapSearchDiv {
   display: flex;
   position: relative;
   height: 35px;
   width: 300px;
-  z-index: 999;
 }
 .searchInput {
+  border: none;
+  padding: 0 10px;
   flex: 1;
   -ms-flex: 1;
 }
@@ -16,6 +18,7 @@
   width: inherit;
   position: absolute;
   top: 35px;
+  z-index: 1001;
 }
 .wrapButtons {
   display: flex;

@@ -17,6 +17,7 @@ class TypeAhead extends React.Component {
   render() {
     return (
       <TypeAheadDropdown
+        borderColor="1px solid gray"
         displayProperties={["name", "surname"]}
         selectedObjectToReturn={["id", "name", "surname"]}
         onChange={this.handleChange}
@@ -25,6 +26,10 @@ class TypeAhead extends React.Component {
         btnNext={this.btnNext}
         firstButton="Previous"
         secondButton="Next"
+        btnBackgroundColor="gray"
+        btnTextColor="white"
+        disableNextButton={false}
+        disablePreviousButton={false}
       />
     );
   }

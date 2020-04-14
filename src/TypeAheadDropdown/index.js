@@ -104,7 +104,10 @@ class TypeAheadDropdown extends React.Component {
       btnfFooterBackground,
       btnBackgroundColor,
       ulBackgroundColor,
-      liColor
+      liColor,
+      borderColor,
+      disableNextButton,
+      disablePreviousButton
     } = this.props;
     return (
       <div
@@ -115,7 +118,8 @@ class TypeAheadDropdown extends React.Component {
           className="wrapSearchDiv"
           style={{
             height: typeof height != "undefined" ? height : "",
-            width: typeof width != "undefined" ? width : ""
+            width: typeof width != "undefined" ? width : "",
+            border: typeof borderColor != "undefined" ? borderColor : ""
           }}
           ref={wrapRef => (this.wrapRef = wrapRef)}
           onClick={this.displayTable}
@@ -154,6 +158,7 @@ class TypeAheadDropdown extends React.Component {
                     backgroundColor: btnBackgroundColor,
                     color: btnTextColor
                   }}
+                  disabled={disablePreviousButton}
                 >
                   {firstButton}
                 </button>
@@ -164,6 +169,7 @@ class TypeAheadDropdown extends React.Component {
                     backgroundColor: btnBackgroundColor,
                     color: btnTextColor
                   }}
+                  disabled={disableNextButton}
                 >
                   {secondButton}
                 </button>
