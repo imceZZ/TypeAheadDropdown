@@ -138,6 +138,7 @@ class TypeAheadDropdown extends React.Component {
               }}
             >
               <Dropdown
+                noDataMSG={this.props.noDataMSG}
                 displayProperties={this.props.displayProperties}
                 selectedObjectToReturn={this.props.selectedObjectToReturn}
                 data={data}
@@ -148,7 +149,8 @@ class TypeAheadDropdown extends React.Component {
               <div
                 className="wrapButtons"
                 style={{
-                  backgroundColor: btnfFooterBackground
+                  backgroundColor: btnfFooterBackground,
+                  display: data.length === 0 ? "none" : ""
                 }}
               >
                 <button
