@@ -149,8 +149,7 @@ class TypeAheadDropdown extends React.Component {
               <div
                 className="wrapButtons"
                 style={{
-                  backgroundColor: btnfFooterBackground,
-                  display: data.length === 0 ? "none" : ""
+                  backgroundColor: btnfFooterBackground
                 }}
               >
                 <button
