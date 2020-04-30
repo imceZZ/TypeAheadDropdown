@@ -17,6 +17,7 @@ class TypeAhead extends React.Component {
   render() {
     return (
       <TypeAheadDropdown
+        disableInput={false}
         borderColor="1px solid gray"
         displayProperties={["name", "surname"]}
         selectedObjectToReturn={["id", "name", "surname"]}

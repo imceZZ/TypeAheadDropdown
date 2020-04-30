@@ -55,7 +55,9 @@ class TypeAheadDropdown extends React.Component {
     this.props.onChange(event.target.value);
   }
   displayTable() {
-    this.setState({ displayTable: true });
+    if (!this.props.disableInput) {
+      this.setState({ displayTable: true });
+    }
   }
   getName(id, name, surname) {
     const { selectedObjectToReturn } = this.props;
@@ -107,7 +109,8 @@ class TypeAheadDropdown extends React.Component {
       liColor,
       borderColor,
       disableNextButton,
-      disablePreviousButton
+      disablePreviousButton,
+      disableInput
     } = this.props;
     return (
       <div
@@ -126,9 +129,13 @@ class TypeAheadDropdown extends React.Component {
         >
           <input
             className="searchInput"
+            disabled={disableInput ? true : false}
             placeholder={this.state.inputPlaceholder}
             value={studentName}
             onChange={this.handleChange.bind(this)}
+            style={{
+              backgroundColor: disableInput ? "#F8F8F9" : ""
+            }}
           />
           {displayTable ? (
             <div
