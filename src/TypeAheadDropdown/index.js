@@ -56,8 +56,13 @@ class TypeAheadDropdown extends React.Component {
   handleKeyPress = e => {
     if (e.keyCode == 9) {
       this.setState({ displayTable: false });
-      if (!this.state.studentSelected) {
-        this.setState({ studentName: "" });
+      if (
+        !this.state.studentSelected &&
+        this.state.studentName !== this.props.defaultName
+      ) {
+        this.setState({
+          studentName: ""
+        });
       }
     }
   };

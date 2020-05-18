@@ -16,7 +16,7 @@ If you don't specify (data) prop when you use TypeAheadDropdown then in the drop
 
 You must declare these methods in the component otherwise will not work:
 
-NOTE: In case that list is not updated when you call your API and you change data={data} then in the method handleChange add this line at the end this.forceUpdate();
+**NOTE**: In case that list is not updated when you call your API and you are trying to change data={data} then in the method handleChange add this line at the end **this.forceUpdate()**;
 
 ```
 getFullName(fullName) {
