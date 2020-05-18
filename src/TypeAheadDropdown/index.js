@@ -6,6 +6,7 @@ import "./typeAheadDropdown.css";
 class TypeAheadDropdown extends React.Component {
   constructor(props) {
     super(props);
+    this.textInput = React.createRef();
     this.state = {
       data: typeof this.props.data != "undefined" ? this.props.data : students,
       displayTable: undefined,
@@ -23,6 +24,8 @@ class TypeAheadDropdown extends React.Component {
     this.getName = this.getName.bind(this);
     this.btnPrevious = this.btnPrevious.bind(this);
     this.btnNext = this.btnNext.bind(this);
+    this.focusTypeAhead = this.focusTypeAhead.bind(this);
+    this.handleKeyPress = this.handleKeyPress.bind(this);
   }
   componentDidMount() {
     this.setState({ displayTable: false });
@@ -50,6 +53,14 @@ class TypeAheadDropdown extends React.Component {
     }
     this.setState({ displayTable: false });
   };
+  handleKeyPress = e => {
+    if (e.keyCode == 9) {
+      this.setState({ displayTable: false });
+    }
+  };
+  focusTypeAhead() {
+    this.setState({ displayTable: true });
+  }
   handleChange(event) {
     this.setState({ studentName: event.target.value, studentSelected: false });
     this.props.onChange(event.target.value);
@@ -128,6 +139,9 @@ class TypeAheadDropdown extends React.Component {
           onClick={this.displayTable}
         >
           <input
+            onKeyDown={this.handleKeyPress}
+            ref={this.textInput}
+            onFocus={this.focusTypeAhead}
             className="searchInput"
             disabled={disableInput ? true : false}
             placeholder={this.state.inputPlaceholder}
@@ -160,6 +174,7 @@ class TypeAheadDropdown extends React.Component {
                 }}
               >
                 <button
+                  tabIndex="-1"
                   className="btnPrevious"
                   onClick={this.btnPrevious}
                   style={{
@@ -171,6 +186,7 @@ class TypeAheadDropdown extends React.Component {
                   {firstButton}
                 </button>
                 <button
+                  tabIndex="-1"
                   className="btnNext"
                   onClick={this.btnNext}
                   style={{
