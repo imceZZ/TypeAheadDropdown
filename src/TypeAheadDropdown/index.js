@@ -175,7 +175,7 @@ class TypeAheadDropdown extends React.Component {
                 getName={this.getName}
                 ulBackgroundColor={ulBackgroundColor}
                 liColor={liColor}
-                slash={slash}
+                slash={slash || " "}
               />
               <div
                 className="wrapButtons"
