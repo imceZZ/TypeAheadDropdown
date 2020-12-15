@@ -21,19 +21,20 @@ class Dropdown extends React.Component {
       data,
       displayProperties,
       selectedObjectToReturn,
-      noDataMSG
+      noDataMSG,
+      slash,
     } = this.props;
     let list;
     if (data.length === 0) {
       list = <li>{typeof noDataMSG != "undefined" ? noDataMSG : "No data"}</li>;
     } else {
-      list = data.map(item => {
+      list = data.map((item) => {
         j++;
         return (
           <li
             className="liSelector"
             style={{
-              color: liColor
+              color: liColor,
             }}
             key={j}
             onClick={this.handleClick}
@@ -41,7 +42,9 @@ class Dropdown extends React.Component {
             data-name={item[selectedObjectToReturn[1]]}
             data-surname={item[selectedObjectToReturn[2]]}
           >
-            {item[displayProperties[0]]} {item[displayProperties[1]]}
+            {item[displayProperties[0]]}
+            {slash}
+            {item[displayProperties[1]]}
           </li>
         );
       });
@@ -50,12 +53,12 @@ class Dropdown extends React.Component {
       <div
         className="dropDownDiv"
         style={{
-          backgroundColor: ulBackgroundColor
+          backgroundColor: ulBackgroundColor,
         }}
       >
         <ul
           style={{
-            cursor: data.length === 0 ? "default" : "pointer"
+            cursor: data.length === 0 ? "default" : "pointer",
           }}
         >
           {list}

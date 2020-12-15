@@ -18,7 +18,7 @@ class TypeAheadDropdown extends React.Component {
       studentName:
         typeof this.props.defaultName != "undefined"
           ? this.props.defaultName
-          : ""
+          : "",
     };
     this.displayTable = this.displayTable.bind(this);
     this.getName = this.getName.bind(this);
@@ -41,7 +41,7 @@ class TypeAheadDropdown extends React.Component {
       this.setState({ data: this.props.data });
     }
   }
-  handleClick = e => {
+  handleClick = (e) => {
     if (this.wrapRef.contains(e.target)) {
       return;
     }
@@ -53,7 +53,7 @@ class TypeAheadDropdown extends React.Component {
     }
     this.setState({ displayTable: false });
   };
-  handleKeyPress = e => {
+  handleKeyPress = (e) => {
     if (e.keyCode == 9) {
       this.setState({ displayTable: false });
       if (
@@ -61,7 +61,7 @@ class TypeAheadDropdown extends React.Component {
         this.state.studentName !== this.props.defaultName
       ) {
         this.setState({
-          studentName: ""
+          studentName: "",
         });
       }
     }
@@ -93,7 +93,7 @@ class TypeAheadDropdown extends React.Component {
     }
     this.setState(
       {
-        studentName: studentN
+        studentName: studentN,
       },
       () => {
         this.setState({ displayTable: false, studentSelected: true });
@@ -102,7 +102,7 @@ class TypeAheadDropdown extends React.Component {
     const selectedPerson = {
       [selectedObjectToReturn[0]]: id,
       [selectedObjectToReturn[1]]: name,
-      [selectedObjectToReturn[2]]: surname
+      [selectedObjectToReturn[2]]: surname,
     };
     this.props.getFullName(selectedPerson);
   }
@@ -129,7 +129,8 @@ class TypeAheadDropdown extends React.Component {
       borderColor,
       disableNextButton,
       disablePreviousButton,
-      disableInput
+      disableInput,
+      slash,
     } = this.props;
     return (
       <div
@@ -141,9 +142,9 @@ class TypeAheadDropdown extends React.Component {
           style={{
             height: typeof height != "undefined" ? height : "",
             width: typeof width != "undefined" ? width : "",
-            border: typeof borderColor != "undefined" ? borderColor : ""
+            border: typeof borderColor != "undefined" ? borderColor : "",
           }}
-          ref={wrapRef => (this.wrapRef = wrapRef)}
+          ref={(wrapRef) => (this.wrapRef = wrapRef)}
           onClick={this.displayTable}
         >
           <input
@@ -156,14 +157,14 @@ class TypeAheadDropdown extends React.Component {
             value={studentName}
             onChange={this.handleChange.bind(this)}
             style={{
-              backgroundColor: disableInput ? "#F8F8F9" : ""
+              backgroundColor: disableInput ? "#F8F8F9" : "",
             }}
           />
           {displayTable ? (
             <div
               className="searchDiv"
               style={{
-                top: typeof height != "undefined" ? height : ""
+                top: typeof height != "undefined" ? height : "",
               }}
             >
               <Dropdown
@@ -174,11 +175,12 @@ class TypeAheadDropdown extends React.Component {
                 getName={this.getName}
                 ulBackgroundColor={ulBackgroundColor}
                 liColor={liColor}
+                slash={slash}
               />
               <div
                 className="wrapButtons"
                 style={{
-                  backgroundColor: btnfFooterBackground
+                  backgroundColor: btnfFooterBackground,
                 }}
               >
                 <button
@@ -187,7 +189,7 @@ class TypeAheadDropdown extends React.Component {
                   onClick={this.btnPrevious}
                   style={{
                     backgroundColor: btnBackgroundColor,
-                    color: btnTextColor
+                    color: btnTextColor,
                   }}
                   disabled={disablePreviousButton}
                 >
@@ -199,7 +201,7 @@ class TypeAheadDropdown extends React.Component {
                   onClick={this.btnNext}
                   style={{
                     backgroundColor: btnBackgroundColor,
-                    color: btnTextColor
+                    color: btnTextColor,
                   }}
                   disabled={disableNextButton}
                 >
