@@ -1,0 +1,11 @@
+.dropDownDiv {
+  background-color: #ebebeb;
+}
+.dropDownDiv > ul {
+  margin: 0;
+  padding: 5px 5px;
+  list-style-type: none;
+}
+.dropDownDiv > ul > li {
+  margin-bottom: 5px;
+}
