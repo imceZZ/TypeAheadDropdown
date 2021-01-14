@@ -3,7 +3,7 @@ import TypeAheadDropdown from "./TypeAheadDropdown";
 
 class TypeAhead extends React.Component {
   getFullName(selectedRow) {
-    console.log(selectedRow);
+    console.log("EEE", selectedRow);
   }
   btnPrevious() {
     console.log("previous button clicked");
@@ -12,11 +12,12 @@ class TypeAhead extends React.Component {
     console.log("next button clicked");
   }
   handleChange(textInput) {
-    console.log(textInput);
+    console.log("change", textInput);
   }
   render() {
     return (
       <TypeAheadDropdown
+        removeValueOnClick={true}
         slash="/"
         disableInput={false}
         borderColor="1px solid gray"

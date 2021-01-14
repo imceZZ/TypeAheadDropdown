@@ -49,12 +49,15 @@ class TypeAheadDropdown extends React.Component {
       !this.state.studentSelected &&
       this.state.studentName !== this.props.defaultName
     ) {
-      this.setState({ studentName: "" });
+      if (typeof this.props.removeValueOnClick === "undefined") {
+        this.setState({ studentName: "" });
+      }
     }
+
     this.setState({ displayTable: false });
   };
   handleKeyPress = (e) => {
-    if (e.keyCode == 9) {
+    if (e.keyCode === 9) {
       this.setState({ displayTable: false });
       if (
         !this.state.studentSelected &&
