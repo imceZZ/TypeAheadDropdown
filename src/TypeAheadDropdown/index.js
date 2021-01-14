@@ -51,6 +51,8 @@ class TypeAheadDropdown extends React.Component {
     ) {
       if (typeof this.props.removeValueOnClick === "undefined") {
         this.setState({ studentName: "" });
+      } else {
+        this.props.getFullName({ custom: true, value: this.state.studentName });
       }
     }
 

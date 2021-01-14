@@ -12,7 +12,7 @@ class TypeAhead extends React.Component {
     console.log("next button clicked");
   }
   handleChange(textInput) {
-    console.log(textInput);
+    // console.log(textInput);
   }
   render() {
     return (
