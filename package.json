@@ -10,13 +10,10 @@
   },
   "license": "MIT",
   "private": false,
-  "dependencies": {
-    "react": "^16.13.1",
-    "react-scripts": "3.4.1"
-  },
   "scripts": {
     "start": "react-scripts start",
     "build": "BABEL_ENV=production webpack --config webpack.config.js",
+    "pub": "npm version patch && npm run build && npm publish",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
@@ -43,8 +40,11 @@
     "babel-loader": "^8.1.0",
     "babel-preset-react-app": "^9.1.2",
     "css-loader": "^3.3.0",
+    "react": "^16.13.1",
+    "react-dom": "^17.0.1",
+    "react-scripts": "3.4.1",
     "style-loader": "^1.0.1",
-    "webpack": "^4.41.2",
+    "webpack": "^4.42.0",
     "webpack-cli": "^3.3.12"
   }
 }
