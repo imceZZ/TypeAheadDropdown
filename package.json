@@ -1,6 +1,6 @@
 {
   "name": "typeahead-dropdown",
-  "version": "0.3.6",
+  "version": "0.3.7",
   "description": "TypeAhead dropdown with pagination",
   "author": "Neim Elezi - Imce",
   "main": "./build/index.js",
